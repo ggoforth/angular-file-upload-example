@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html data-ng-app="app">
+<head>
+    <title><%= title %></title>
+    <link rel='stylesheet'
+          href='/stylesheets/style.css'/>
+    <link rel="stylesheet"
+          href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+</head>
+<body data-ng-controller="BodyCtrl as body">
+<form name='body.fileUpload'
+      enctype="multipart/form-data">
+    <div class="btn btn-primary"
+         ngf-select
+         ng-model="body.file"
+         name="file"
+         ngf-pattern="'image/*'"
+         accept="image/*"
+         ngf-max-size="20MB"
+         ngf-min-height="100">
+        Select
+    </div>
+
+    <button type="submit" ng-click="body.submit()">submit</button>
+</form>
+<script src="bower_components/angular/angular.min.js"></script>
+<script src="bower_components/ng-file-upload/ng-file-upload-all.js"></script>
+<script src="javascripts/app.js"></script>
+</body>
+</html>
